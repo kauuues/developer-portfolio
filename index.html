@@ -1,238 +1,215 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Apresentação Pessoal - Kauê</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kauê dos Santos Barros | Portfólio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #f0f0f0;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-      transition: background-color 0.3s, color 0.3s;
-    }
-    body.dark-mode {
-      background: #121212;
-      color: #e0e0e0;
-    }
-    header {
-      background-color: rgba(0, 119, 204, 0.9);
-      color: white;
-      padding: 30px;
-      text-align: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.6);
-      animation: slideDown 1s ease;
-    }
-    section {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 30px;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 15px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-      animation: fadeIn 1.5s ease;
-    }
-    img {
-      max-width: 160px;
-      border-radius: 50%;
-      display: block;
-      margin: 0 auto 20px;
-      border: 3px solid #00aaff;
-      animation: fadeIn 2s ease;
-    }
-    h2 {
-      color: #00aaff;
-      border-bottom: 1px solid #00aaff;
-      padding-bottom: 5px;
-      margin-top: 25px;
-    }
-    p {
-      line-height: 1.8;
-    }
-    .social {
-      text-align: center;
-      margin-top: 20px;
-    }
-    .social a {
-      color: #00aaff;
-      font-size: 24px;
-      margin: 0 10px;
-      transition: color 0.3s;
-    }
-    .social a:hover {
-      color: #ffaa00;
-    }
-    .button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 25px;
-      background: #00aaff;
-      color: white;
-      text-decoration: none;
-      border-radius: 30px;
-      transition: background 0.3s, transform 0.3s;
-    }
-    .button:hover {
-      background: #ffaa00;
-      transform: scale(1.05);
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes slideDown {
-      from { opacity: 0; transform: translateY(-50px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @media (max-width: 600px) {
-      section {
-        margin: 20px;
-        padding: 20px;
-      }
-      h1 {
-        font-size: 28px;
-      }
-    }
-
-    /* Fundo de partículas */
-    #particles-js {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: -1;
-    }
-
-    /* Estilos do Formulário */
-    form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 30px;
-    }
-    input, textarea {
-      width: 80%;
-      padding: 10px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-    }
-    button {
-      padding: 12px 25px;
-      background: #00aaff;
-      color: white;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: background 0.3s, transform 0.3s;
-    }
-    button:hover {
-      background: #ffaa00;
-      transform: scale(1.05);
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-  <!-- Fundo de partículas -->
   <div id="particles-js"></div>
 
-  <!-- Toggle Dark Mode -->
-  <button id="darkModeToggle" style="position: absolute; top: 20px; right: 20px; padding: 10px; background: #0077cc; color: white; border: none; border-radius: 5px; cursor: pointer;">🌙</button>
+  <button id="darkModeToggle" class="theme-toggle" aria-label="Alternar tema">🌙</button>
 
-  <header data-aos="fade-down">
-    <h1>Kauê dos Santos Barros</h1>
-    <p>Front-End Developer</p>
+  <header class="hero">
+    <div class="container hero-content" data-aos="fade-down">
+      <div class="hero-text">
+        <span class="tag">Portfólio Profissional</span>
+        <h1>Kauê dos Santos Barros</h1>
+        <p class="hero-subtitle">
+          Desenvolvedor com atuação em automação de processos, dados, BI e desenvolvimento web.
+        </p>
+        <p class="hero-description">
+          Hoje atuo criando soluções que conectam tecnologia e resultado de negócio, com experiência em
+          Node.js, JavaScript, SQL, Power BI, PostgreSQL, SQLite, Supabase e integração de sistemas.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#projetos" class="button primary">Ver projetos</a>
+          <a href="curriculo-kaue.pdf" download class="button secondary">Baixar currículo</a>
+          <a href="DiplomaDigital.pdf" download class="button secondary">Baixar certificado</a>
+        </div>
+      </div>
+
+      <div class="hero-image" data-aos="zoom-in" data-aos-delay="200">
+        <img src="apresentação.png" alt="Foto de Kauê dos Santos Barros">
+      </div>
+    </div>
   </header>
 
-  <section data-aos="fade-up">
-    <img src="eu.png" alt="Sua Foto">
-    <h2>Sobre Mim:</h2>
-    <p>Tenho 21 anos, sou de São Bernardo do Campo e formado em Análise e Desenvolvimento de Sistemas. Busco minha primeira oportunidade na área para aplicar meus conhecimentos. Tenho experiência com HTML, Python e CSS, e estou sempre aprimorando minhas habilidades. Sou apaixonado por tecnologia e quero contribuir com projetos que me desafiem e gerem resultados para as empresas.</p>
+  <main>
+    <section class="section" id="sobre" data-aos="fade-up">
+      <div class="container card">
+        <h2>Sobre mim</h2>
+        <p>
+          Sou um profissional em transição consolidada para a área de TI, com experiência prática no
+          desenvolvimento de sistemas internos, automações, dashboards e soluções voltadas para otimização
+          de processos empresariais.
+        </p>
+        <p>
+          Tenho trabalhado em projetos que envolvem desenvolvimento full stack, banco de dados, leitura e
+          tratamento de documentos, integração com APIs, criação de painéis gerenciais e automatização de
+          rotinas operacionais. Meu foco é usar tecnologia para resolver problemas reais e gerar eficiência.
+        </p>
+      </div>
+    </section>
 
-    <h2>O que eu faço?</h2>
-    <p>Estou em busca de uma oportunidade na área de Análise e Desenvolvimento de Sistemas. Apesar de estar desempregado no momento, estou focado em aplicar meus conhecimentos para gerar resultados. Tenho experiência prática com HTML, CSS e Python, e estou pronto para colaborar em projetos que usem essas tecnologias. Procuro um ambiente onde possa contribuir, aprender com os desafios e crescer junto com a equipe. Estou preparado para colocar minha formação em prática e ajudar a alcançar as metas da empresa que me der essa chance.</p>
+    <section class="section" id="skills" data-aos="fade-up">
+      <div class="container">
+        <h2>Habilidades e conhecimentos</h2>
 
-    <div style="text-align: center; margin-top: 30px;">
-      <a href="curriculo-kaue.pdf" download class="button">📄 Baixar Currículo</a>
-      <a href="DiplomaDigital.pdf" download class="button">📄 Baixar Certificado</a>
-    </div>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>Desenvolvimento Web</h3>
+            <p>HTML, CSS, JavaScript, Node.js, Express, Next.js, TypeScript, Tailwind CSS</p>
+          </div>
 
-    <div class="social" data-aos="fade-up" data-aos-delay="300">
-      <a href="mailto:kaue.santosbarros04@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
-      <a href="https://wa.me/5511987308975" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://www.linkedin.com/in/kauuues/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/kauuues" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-    </div>
+          <div class="skill-card">
+            <h3>Banco de Dados</h3>
+            <p>SQL Server, PostgreSQL, SQLite, Supabase, Prisma</p>
+          </div>
 
-    <!-- Formulário de Contato com Formspree -->
-    <h2>Entre em Contato</h2>
-    <form action="https://formspree.io/f/xrbpnzny" method="POST">
-      <input type="text" name="nome" placeholder="Seu nome" required>
-      <input type="email" name="email" placeholder="Seu email" required>
-      <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
+          <div class="skill-card">
+            <h3>Dados e BI</h3>
+            <p>Power BI, modelagem de dados, criação de dashboards, análise operacional e financeira</p>
+          </div>
 
+          <div class="skill-card">
+            <h3>Automação e Integração</h3>
+            <p>APIs, automação de processos, leitura de PDF, fluxos internos, bots e sistemas corporativos</p>
+          </div>
 
-  <!-- Scripts -->
+          <div class="skill-card">
+            <h3>Ferramentas</h3>
+            <p>Git, GitHub, Vercel, Postman, VS Code</p>
+          </div>
+
+          <div class="skill-card">
+            <h3>Estudos atuais</h3>
+            <p>Sistemas de Informação, arquitetura de sistemas, segurança, escalabilidade e boas práticas</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projetos" data-aos="fade-up">
+      <div class="container">
+        <h2>Projetos em destaque</h2>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <h3>Sistema de Automação de Manutenção</h3>
+            <p>
+              Sistema interno com controle de máquinas, manutenções, permissões por setor, QR Code,
+              imagens, auditoria e painel administrativo.
+            </p>
+            <span>Node.js • Express • SQLite • JWT • Multer</span>
+          </article>
+
+          <article class="project-card">
+            <h3>Controle de Terceiros com Leitura de PDF</h3>
+            <p>
+              Solução para importar PDFs operacionais, extrair dados automaticamente e alimentar banco
+              de dados com relatórios e filtros mensais.
+            </p>
+            <span>Node.js • SQLite • PDF Parse • Express</span>
+          </article>
+
+          <article class="project-card">
+            <h3>Bot de Atendimento via WhatsApp</h3>
+            <p>
+              Estruturação de fluxo automatizado para atendimento financeiro, com sessões, validações,
+              integração planejada com ERP e suporte a handoff humano.
+            </p>
+            <span>TypeScript • Prisma • PostgreSQL • API WhatsApp</span>
+          </article>
+
+          <article class="project-card">
+            <h3>Dashboards em Power BI</h3>
+            <p>
+              Desenvolvimento de dashboards operacionais e gerenciais para acompanhamento de indicadores,
+              carteira, faturamento, prazos e processos internos.
+            </p>
+            <span>Power BI • SQL Server • Excel</span>
+          </article>
+
+          <article class="project-card">
+            <h3>Aplicações Web e Financeiras</h3>
+            <p>
+              Desenvolvimento de aplicações com autenticação, controle de dados, relatórios e interface
+              moderna para uso prático no dia a dia.
+            </p>
+            <span>Next.js • Supabase • PostgreSQL • Tailwind</span>
+          </article>
+
+          <article class="project-card">
+            <h3>Visão Computacional para Monitoramento</h3>
+            <p>
+              Protótipo com detecção de veículos em áreas definidas, registro em banco e análise de tempo
+              de permanência.
+            </p>
+            <span>Python • OpenCV • YOLO • SQLite</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="objetivo" data-aos="fade-up">
+      <div class="container card">
+        <h2>Objetivo profissional</h2>
+        <p>
+          Busco continuar crescendo na área de tecnologia, atuando com desenvolvimento de sistemas,
+          automações, integração de dados e soluções que tragam impacto real para a operação da empresa.
+        </p>
+        <p>
+          Quero fazer parte de projetos onde eu possa unir visão de negócio, lógica de programação e
+          melhoria contínua de processos.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="contato" data-aos="fade-up">
+      <div class="container card">
+        <h2>Contato</h2>
+
+        <div class="social">
+          <a href="mailto:kaue.santosbarros04@gmail.com" target="_blank" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="https://wa.me/5511987308975" target="_blank" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/kauuues/" target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/kauuues" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+
+        <form action="https://formspree.io/f/xrbpnzny" method="POST" class="contact-form">
+          <input type="text" name="nome" placeholder="Seu nome" required>
+          <input type="email" name="email" placeholder="Seu email" required>
+          <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
+          <button type="submit" class="button primary">Enviar mensagem</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 - Kauê dos Santos Barros. Todos os direitos reservados.</p>
+  </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script>
-    // Inicializa AOS
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
-
-    // Alterna Dark Mode
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    darkModeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      darkModeToggle.textContent = document.body.classList.contains('dark-mode') ? '🌞' : '🌙';
-    });
-
-    // Configuração Particles.js
-    particlesJS('particles-js', {
-      particles: {
-        number: { value: 60 },
-        color: { value: "#00aaff" },
-        shape: { type: "circle" },
-        opacity: { value: 0.5 },
-        size: { value: 3 },
-        line_linked: {
-          enable: true,
-          distance: 150,
-          color: "#00aaff",
-          opacity: 0.4,
-          width: 1
-        },
-        move: {
-          enable: true,
-          speed: 3
-        }
-      },
-      interactivity: {
-        events: {
-          onhover: { enable: true, mode: "repulse" },
-          onclick: { enable: true, mode: "push" }
-        }
-      }
-    });
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
